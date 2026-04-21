@@ -1,0 +1,64 @@
+{
+    "schemes": [
+        {
+            "id": 1,
+            "name": "PM Kisan Samman Nidhi",
+            "category": "Farmer",
+            "description": "Provides ₹6,000 per year to small and marginal farmers.",
+            "eligibility": "Must be a landholding farmer family.",
+            "documentsRequired": ["Aadhaar Card", "Bank Account", "Land Records"],
+            "howToApply": "Register on pmkisan.gov.in or visit nearest CSC."
+        },
+        {
+            "id": 2,
+            "name": "MGNREGA",
+            "category": "Labor",
+            "description": "Guarantees 100 days of wage employment in a financial year to a rural household.",
+            "eligibility": "Any adult member of a rural household willing to do unskilled manual work.",
+            "documentsRequired": ["Job Card", "Aadhaar Card", "Bank Account"],
+            "howToApply": "Apply at Gram Panchayat with a photograph."
+        },
+        {
+            "id": 3,
+            "name": "Pradhan Mantri Matru Vandana Yojana",
+            "category": "Women",
+            "description": "Maternity benefit of ₹5,000 for pregnant women and lactating mothers.",
+            "eligibility": "First live birth, excluding regular govt employees.",
+            "documentsRequired": ["Aadhaar Card", "MCP Card", "Bank Account"],
+            "howToApply": "Apply at Anganwadi Centre or ASHA worker."
+        },
+        {
+            "id": 4,
+            "name": "e-Shram",
+            "category": "Labor",
+            "description": "National database of unorganized workers, provides ₹2 lakh accidental insurance.",
+            "eligibility": "Age 16-59, not a member of EPFO/ESIC.",
+            "documentsRequired": ["Aadhaar Card with linked mobile", "Bank Account Details"],
+            "howToApply": "Register online at eshram.gov.in or CSC."
+        }
+    ],
+    "rights": {
+        "Women": [
+            { "title": "Protection from Domestic Violence", "desc": "The Protection of Women from Domestic Violence Act, 2005 protects women from physical, emotional, verbal, sexual, and economic abuse at home.", "fullDetails": "<strong>What is covered?</strong><br>Any act of physical, emotional, sexual, verbal, or economic abuse. This also includes dowry-related harassment.<br><br><strong>Who can complain?</strong><br>Any woman who is or has been in a domestic relationship with the abuser (wife, sister, mother, live-in partner).<br><br><strong>Reliefs available:</strong><br><ul style='padding-left:20px'><li>Protection orders to prevent further violence.</li><li>Residence orders (right to live in the shared household).</li><li>Monetary relief for expenses and losses.</li><li>Custody of children.</li></ul><br><strong>How to complain:</strong> You can reach out to the local Protection Officer or Police, or call the Women's Helpline (1091)." },
+            { "title": "Equal Pay for Equal Work", "desc": "Under the Equal Remuneration Act, women must be paid the same as men for the same work.", "fullDetails": "<strong>The Law:</strong><br>The Equal Remuneration Act, 1976 mandates the payment of equal remuneration to men and women workers for the same work or work of a similar nature.<br><br><strong>Key Features:</strong><br><ul style='padding-left:20px'><li>Employers cannot discriminate during recruitment or promotions on the basis of gender.</li><li>Wages cannot be reduced for any worker to equalize pay.</li><li>Violations can lead to strict penalties for the employer.</li></ul>" },
+            { "title": "Maternity Leave", "desc": "The Maternity Benefit Act allows up to 26 weeks of paid maternity leave.", "fullDetails": "<strong>Eligibility:</strong><br>A woman must have worked in the establishment for at least 80 days in the past 12 months.<br><br><strong>Benefits:</strong><br><ul style='padding-left:20px'><li>Up to 26 weeks of paid leave for the first two children.</li><li>12 weeks for subsequent children.</li><li>Special provisions for adopting mothers or commissioning mothers (12 weeks).</li><li>A medical bonus and nursing breaks during working hours upon returning.</li></ul><br>Employers are prohibited from dismissing a woman solely because she is on maternity leave." }
+        ],
+        "Farmer": [
+            { "title": "MSP Guarantee (Administrative)", "desc": "Farmers have the right to sell crops at Minimum Support Price (MSP) in designated APMC mandis." },
+            { "title": "Right to Claim Crop Insurance", "desc": "Under PM Fasal Bima Yojana, farmers can claim insurance for crop loss due to natural calamities." }
+        ],
+        "Labor": [
+            { "title": "Minimum Wages Act", "desc": "Every worker is entitled to receive the minimum wage fixed by the state government." },
+            { "title": "Regulated Working Hours", "desc": "Standard 8 hours a day. Overtime must be paid at double the ordinary rate of wages." }
+        ],
+        "Consumer": [
+            { "title": "Right to Information", "desc": "Consumers have the right to be informed about the quality, quantity, price, and purity of goods." },
+            { "title": "Right to Consumer Courts", "desc": "You can file a complaint in consumer forums if you receive defective goods or deficient services." }
+        ]
+    },
+    "nearby": [
+        { "name": "District Legal Services Authority (DLSA)", "type": "Legal Aid", "phone": "15100" },
+        { "name": "Local Gram Panchayat Office", "type": "Support Center", "phone": "Local" },
+        { "name": "Women's Helpline", "type": "Helpdesk", "phone": "1091" }
+    ]
+}

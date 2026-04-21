@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyayaSathi - Legal Aid & Rights Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Authentication View -->
+    <div class="auth-container" id="authContainer">
+        <div class="auth-card" id="loginCard">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px; color: var(--primary-color);">
+                <i class="fas fa-balance-scale" style="font-size: 2rem;"></i>
+                <h1 style="font-size: 1.8rem; color: var(--text-dark);">NyayaSathi</h1>
+            </div>
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Phone Number or Email</label>
+                    <input type="text" id="loginId" placeholder="Enter phone or email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-primary w-100">Login</button>
+            </form>
+            <div class="toggle-auth">
+                Don't have an account? <a id="showSignup">Sign up here</a>
+            </div>
+        </div>
+
+        <div class="auth-card hidden" id="signupCard">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px; color: var(--primary-color);">
+                <i class="fas fa-balance-scale" style="font-size: 2rem;"></i>
+                <h1 style="font-size: 1.8rem; color: var(--text-dark);">NyayaSathi</h1>
+            </div>
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signupName" placeholder="e.g. Ramesh Kumar" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label>Email (Gmail)</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPass" placeholder="Create password" required>
+                </div>
+                <button type="submit" class="btn-primary w-100">Sign Up</button>
+            </form>
+            <div class="toggle-auth">
+                Already have an account? <a id="showLogin">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="app-container hidden" id="mainAppContainer">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <button id="backBtn" class="btn-icon hidden" title="Back to Home" style="margin-right: 8px; width: 32px; height: 32px; font-size: 1rem;"><i class="fas fa-arrow-left"></i></button>
+                <i class="fas fa-balance-scale"></i>
+                <h1>NyayaSathi</h1>
+            </div>
+            <div class="controls">
+                <button id="langToggle" class="btn-icon" title="Switch Language">अ/A</button>
+                <button id="logoutBtn" class="btn-icon" title="Log Out" style="margin-left: 10px;"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <!-- 0. Home View -->
+            <section id="view-home" class="view-section active">
+                <div style="text-align: center; margin-top: 10px;">
+                    <h2 style="justify-content: center; margin-bottom: 5px;">Main Menu</h2>
+                    <p style="color: var(--text-muted);">Select a tool to get started</p>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dash-card" data-target="view-chat">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Chatbot</h3>
+                    </div>
+                    <div class="dash-card" data-target="view-rights">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Know Rights</h3>
+                    </div>
+                    <div class="dash-card" data-target="view-schemes">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h3>Govt Schemes</h3>
+                    </div>
+                    <div class="dash-card" data-target="view-docs">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Documents</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1. Chatbot View -->
+            <section id="view-chat" class="view-section">
+                <div class="chat-header">
+                    <h2><i class="fas fa-robot"></i> NyayaSathi Assistant</h2>
+                    <p id="chat-sub">Your friendly legal guide. How can I help?</p>
+                </div>
+                <div class="chat-window" id="chatWindow">
+                    <!-- Messages will appear here -->
+                    <div class="message bot-message">
+                        <div class="msg-bubble">Namaste! Main NyayaSathi hoon. Aapko kanoon ya sarkari yojanaon ke baare mein kya janna hai? (Press the mic icon to speak)</div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <button id="voiceBtn" class="btn-circular pulse-recording-off" title="Start Speaking">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button id="stopVoiceBtn" class="btn-circular" title="Stop AI Speaking" style="background: white; color: #f44336; border: 1px solid #e5e7eb;">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <input type="text" id="chatInput" placeholder="Type your question here...">
+                    <button id="sendBtn" class="btn-circular primary" title="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <p class="disclaimer">Note: AI responses are for guidance only, not professional legal advice.</p>
+            </section>
+
+            <!-- 2. Rights View -->
+            <section id="view-rights" class="view-section">
+                <h2><i class="fas fa-book-open"></i> Know Your Rights</h2>
+                <div class="category-filters" id="rightsFilters">
+                    <button class="filter-btn active" data-cat="Women">Women</button>
+                    <button class="filter-btn" data-cat="Farmer">Farmer</button>
+                    <button class="filter-btn" data-cat="Labor">Labor</button>
+                    <button class="filter-btn" data-cat="Consumer">Consumer</button>
+                </div>
+                <div class="cards-container" id="rightsList">
+                    <!-- Dynamic rendering -->
+                </div>
+            </section>
+
+            <!-- 3. Schemes View -->
+            <section id="view-schemes" class="view-section">
+                <h2><i class="fas fa-hand-holding-heart"></i> Govt Schemes</h2>
+                <div class="category-filters" id="schemesFilters">
+                    <button class="filter-btn active" data-cat="Farmer">Farmer</button>
+                    <button class="filter-btn" data-cat="Labor">Labor</button>
+                    <button class="filter-btn" data-cat="Women">Women</button>
+                </div>
+                <div class="cards-container" id="schemesList">
+                    <!-- Dynamic rendering -->
+                </div>
+            </section>
+
+            <!-- 4. Documents View -->
+            <section id="view-docs" class="view-section">
+                <h2><i class="fas fa-file-contract"></i> Document Aid</h2>
+                <p>Generate simple draft letters.</p>
+                <form id="docForm" class="card-form">
+                    <div class="form-group">
+                        <label>Document Type</label>
+                        <select id="docType">
+                            <option value="FIR">Police FIR Complaint</option>
+                            <option value="COMPLAINT">General Complaint</option>
+                            <option value="APPLICATION">Formal Application</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="docName" placeholder="e.g. Ramesh Kumar" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Address</label>
+                        <input type="text" id="docAddress" placeholder="e.g. Village Rampur" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description (What happened?)</label>
+                        <textarea id="docDesc" rows="4" placeholder="Briefly describe the issue..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Generate Document</button>
+                </form>
+                <div id="docResult" class="hidden">
+                    <h3>Draft Ready</h3>
+                    <textarea id="docOutput" rows="10" readonly></textarea>
+                    <button id="saveDocBtn" type="button" class="btn-primary w-100" style="margin-top:15px;">Save Document for Later</button>
+                </div>
+                
+                <div id="savedDocsContainer" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                    <h3><i class="fas fa-folder-open"></i> Saved Documents</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">Select a saved document to ask the AI assistant about it.</p>
+                    <div id="savedDocsList" class="cards-container">
+                        <!-- Dynamic rendering -->
+                    </div>
+                </div>
+            </section>
+            <!-- Rights Info Modal -->
+            <div id="rightModal" class="hidden" style="position: absolute; top:0; left:0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 50; display:flex; justify-content:center; align-items:center;">
+                <div style="background: white; width: 90%; max-height: 85%; overflow-y: auto; padding: 25px; border-radius: 16px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                    <button id="closeModalBtn" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #555;">&times;</button>
+                    <h3 id="modalTitle" style="margin-bottom: 15px; color: var(--primary-color); font-size: 1.4rem;"></h3>
+                    <span id="modalCategory" class="tag" style="margin-bottom: 15px; display:inline-block; font-size: 0.9rem;"></span>
+                    <p id="modalDesc" style="font-weight: 500; margin-bottom: 15px; color: #333; border-left: 3px solid var(--primary-color); padding-left: 10px;"></p>
+                    <div id="modalFullText" style="line-height: 1.6; color: #444; font-size: 0.95rem;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
